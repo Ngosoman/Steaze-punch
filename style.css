@@ -52,27 +52,7 @@ body {
   border-radius: 20px;
 }
 
-/* Hamburger Styling */
-.hamburger {
-  display: none;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 1.8rem;
-  background-color: transparent;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  z-index: 10;
-  padding: 0.5rem;
-  border-radius: 50%;
-}
 
-.hamburger:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: scale(1.1);
-}
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
