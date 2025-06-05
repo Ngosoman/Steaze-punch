@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+  color: #333;
+}
+
+/* Hero Section */
+.hero {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #ffeaea;
+}
+
+/* Navbar Layout */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ff4d4d;
+  padding: 1rem;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+/* Nav Links */
+.nav-side {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.nav-side li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-side li a.active {
+  border-bottom: 2px solid #fff;
+}
+
+/* Logo Styling */
+.logo {
+  flex-grow: 1;
+  text-align: center;
+  order: 0;
+}
+
+.logo img {
+  height: 100px;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+/* Hamburger Styling */
+.hamburger {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.8rem;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 10;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.hamburger:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav-side.left,
+  .nav-side.right {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ff4d4d;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  .nav-side.right.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .logo {
+    order: -1;
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+}
