@@ -330,17 +330,17 @@ button:hover {
   display: flex;
   height: 100%;
   width: 400%;
-  animation: slideAnimation 8s infinite;
+  animation: slideAnimation 4s infinite;
 }
 
 .slide {
-  width: 100%;
+  width: 50%;
   flex-shrink: 0;
   height: 100%;
 }
 
 .slide img {
-  width: 100%;
+  width: 50%;
   height: 100%;
   object-fit: cover;
 }
