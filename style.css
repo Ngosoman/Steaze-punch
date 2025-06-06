@@ -52,35 +52,6 @@ body {
   border-radius: 20px;
 }
 
-
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .nav-side.left,
-  .nav-side.right {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #ff4d4d;
-    text-align: center;
-    padding-bottom: 1rem;
-  }
-
-  .nav-side.right.show {
-    display: flex;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .logo {
-    order: -1;
-    width: 100%;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-}
 .team {
   padding: 3rem 2rem;
   max-width: 1200px;
@@ -130,7 +101,16 @@ body {
   font-size: 0.95rem;
   color: #666;
 }
-
+.about-section {
+  padding: 3rem 2rem;
+  background-color: #ffeaea;
+  text-align: center;
+}
+.about {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
 .contact-section {
   max-width: 500px;
   margin: 4rem auto;
@@ -191,14 +171,14 @@ button:hover {
 
 /* ACTIVE LINK STYLE */
 .nav-links li a.active {
-  background-color: ;
+  
   color: yellow;
   font-weight: bold;
 }
 .nav-links li a.active {
   border-bottom: 3px solid ;
   padding-bottom: 0.3rem;
-  color:;
+
 }
 .menu-toggle {
   display: none;
