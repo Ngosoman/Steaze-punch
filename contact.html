@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Steaze Punch</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
+<header>
     <nav class="navbar">
       <div class="logo"><img src="steaze-punch logo.jpg" alt="Steaze-Punch logo"></div>
       <!-- <button class="hamburger" id="hamburger">&#9776;</button> -->
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html" >Home</a></li>
-        <li><a href="about.html" >About</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
   </header>
-    <main>
-        <section class="contact">
-            <h1>Contact Us</h1>
-            <p>Want to Make an order?</p>
-           
-            <label for="text"></label>
-            <input type="text" id="name" name="name" placeholder="Enter your name">
-            <label for="number"></label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-            <label for="location"></label>
-            <input type="text" id="location" name="location" placeholder="Enter your delivery location" required>
-            <label for="number"></label>
-            <input type="number" 1d="number" name="number" placeholder="Number of Steaze-Punch's" required>
+  <main class="contact-section">
+    <h1>Order Steaze Punch</h1>
+    <form id="orderForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" />
 
-            
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" required />
 
+      <label for="location">Delivery Location</label>
+      <input type="text" id="location" required />
+
+      <label for="quantity">How many bottles?</label>
+      <input type="number" id="quantity" min="1" required />
+
+      <button type="submit">submit</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
