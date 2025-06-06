@@ -318,20 +318,9 @@ button:hover {
 }
 
 /* HERO SLIDESHOW FULLSCREEN */
-.hero-slideshow {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-}
 
-/* Slideshow logic */
-.slideshow-wrapper {
-  display: flex;
-  height: 100%;
-  width: 400%;
-  animation: slideAnimation 4s infinite;
-}
+
+
 
 .slide {
   width: 50%;
@@ -342,23 +331,72 @@ button:hover {
 .slide img {
   width: 50%;
   height: 100%;
+  object-fit: contain;
   object-fit: cover;
+  object-position: center top;
 }
 
-/* Keyframes for movement */
-@keyframes slideAnimation {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(0); }
 
-  30% { transform: translateX(-100%); }
-  50% { transform: translateX(-100%); }
-
-  55% { transform: translateX(-200%); }
-  75% { transform: translateX(-200%); }
-
-  80% { transform: translateX(-300%); }
-  100% { transform: translateX(-300%); }
+.slide {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+/* === Slideshow Container === */
+.hero-slideshow {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* === Slides Wrapper === */
+.slideshow-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* === Individual Slide === */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fade 16s infinite ease-in-out;
+}
+
+/* Animation delays per slide */
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 4s; }
+.slide:nth-child(3) { animation-delay: 8s; }
+.slide:nth-child(4) { animation-delay: 12s; }
+
+/* === Fade Keyframes === */
+@keyframes fade {
+  0%, 5%    { opacity: 1; }
+  25%, 100% { opacity: 0; }
+}
+
+/* === Text on Top of Slideshow === */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent bg for readability */
+  border-radius: 1rem;
+  max-width: 80%;
+  margin: 0 auto;
+}
+.
 
 /* TEXT ON TOP */
 .hero-content {
