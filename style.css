@@ -317,3 +317,89 @@ button:hover {
   animation: pulse 1.5s infinite;
 }
 
+/* HERO SLIDESHOW FULLSCREEN */
+.hero-slideshow {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Slideshow logic */
+.slideshow-wrapper {
+  display: flex;
+  height: 100%;
+  width: 400%;
+  animation: slideAnimation 8s infinite;
+}
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Keyframes for movement */
+@keyframes slideAnimation {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(0); }
+
+  30% { transform: translateX(-100%); }
+  50% { transform: translateX(-100%); }
+
+  55% { transform: translateX(-200%); }
+  75% { transform: translateX(-200%); }
+
+  80% { transform: translateX(-300%); }
+  100% { transform: translateX(-300%); }
+}
+
+/* TEXT ON TOP */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 2;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.4); /* slight dark overlay for clarity */
+  border-radius: 12px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Order Button */
+.order-btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(255, 77, 77, 0.4);
+  transition: all 0.3s ease;
+}
+
+.order-btn:hover {
+  background-color: #e60000;
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(230, 0, 0, 0.4);
+}
