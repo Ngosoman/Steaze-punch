@@ -7,16 +7,26 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header>
-    <nav class="navbar">
-      <div class="logo"><img src="steaze-punch logo.jpg" alt="Steaze-Punch logo"></div>
-      <!-- <button class="hamburger" id="hamburger">&#9776;</button> -->
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html" >Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-  </header>
+ <header>
+  <nav class="navbar">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+    <label for="menu-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <div class="logo">
+      <img src="steaze-punch logo.jpg" alt="Steaze-Punch logo" />
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html" >Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+</header>
   <main class="contact-section">
     <h1>Order Steaze Punch</h1>
     <form id="orderForm">
@@ -29,7 +39,7 @@
       <label for="location">Delivery Location</label>
       <input type="text" id="location" required />
 
-      <label for="quantity">How many bottles?</label>
+      <label for="quantity">Number of Steaze Punch?</label>
       <input type="number" id="quantity" min="1" required />
 
       <button type="submit">submit</button>

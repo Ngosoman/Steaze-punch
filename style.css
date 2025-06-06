@@ -175,3 +175,135 @@ button {
 button:hover {
   background-color: #e63946;
 }
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0.8rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ACTIVE LINK STYLE */
+.nav-links li a.active {
+  background-color: ;
+  color: yellow;
+  font-weight: bold;
+}
+.nav-links li a.active {
+  border-bottom: 3px solid ;
+  padding-bottom: 0.3rem;
+  color:;
+}
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  
+}
+/* Base Navbar Styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ff4d4d;
+  padding: 1rem 2rem;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.logo img {
+  height: 60px;
+  border-radius: 12px;
+}
+
+/* Menu and Hamburger Styling */
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin: 4px 0;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0.8rem;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+.nav-links li a.active {
+  background-color: yellow;
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #ff4d4d;
+    padding: 1rem;
+    z-index: 1000;
+  }
+
+  .menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .logo {
+    order: -1;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+/* Transform hamburger into X when menu is open */
+.menu-toggle:checked + .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle:checked + .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle:checked + .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+  
