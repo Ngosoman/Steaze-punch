@@ -197,7 +197,7 @@ button:hover {
 }
 
 .logo img {
-  height: 60px;
+  height: 70px;
   border-radius: 12px;
 }
 
@@ -441,3 +441,26 @@ button:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 18px rgba(230, 0, 0, 0.4);
 }
+
+ .footer {
+  background-color: #ff4d4d;
+  color: white;
+  text-align: center;
+  padding: 0.09rem;
+  margin-top:0;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+
+.footer-quote {
+  font-style: italic;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+ 
