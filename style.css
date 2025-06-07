@@ -462,5 +462,10 @@ button:hover {
   margin-bottom: 1rem;
   font-size: 1rem;
 }
-
- 
+.kes {
+  font-weight: bold;
+  color: red;
+  justify-content: center;
+  text-align: center;
+  
+}
