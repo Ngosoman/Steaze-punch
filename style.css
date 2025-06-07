@@ -317,70 +317,50 @@ button:hover {
   animation: pulse 1.5s infinite;
 }
 
-/* HERO SLIDESHOW FULLSCREEN */
-
-
-
-
-.slide {
-  width: 50%;
-  flex-shrink: 0;
-  height: 100%;
-}
-
-.slide img {
-  width: 50%;
-  height: 100%;
-  object-fit: contain;
-  object-fit: cover;
-  object-position: center top;
-}
-
-
-.slide {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-/* === Slideshow Container === */
+/* === HERO SLIDESHOW CONTAINER === */
 .hero-slideshow {
   position: relative;
   width: 100%;
   height: 100vh;
-  overflow: contain;
+  overflow: hidden;
 }
 
-/* === Slides Wrapper === */
+/* === SLIDES WRAPPER === */
 .slideshow-wrapper {
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
+  height: 100%;
+  width: 100%;
 }
 
-/* === Individual Slide === */
+/* === INDIVIDUAL SLIDE === */
 .slide {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
+  background-size: cover;        /* This is key */
+  background-position: center;   /* Center the photo */
+  background-repeat: no-repeat;
   opacity: 0;
-  animation: fade 20s infinite ease-in-out;
+  animation: fade 19s infinite ease-in-out;
 }
 
-/* Animation delays per slide */
-.slide:nth-child(1) { animation-delay: 2s; }
-.slide:nth-child(2) { animation-delay: 6s; }
-.slide:nth-child(3) { animation-delay: 10s; }
-.slide:nth-child(4) { animation-delay: 14s; }
-.slide:nth-child(5) { animation-delay: 18s; }
+/* === DELAY FOR EACH SLIDE === */
+.slide:nth-child(1) { animation-delay: 3s; }
+.slide:nth-child(2) { animation-delay: 7s; }
+.slide:nth-child(3) { animation-delay: 11s; }
+.slide:nth-child(4) { animation-delay: 15s; }
+.slide:nth-child(5) { animation-delay: 19s; }
 
-/* === Fade Keyframes === */
+/* === FADE ANIMATION === */
 @keyframes fade {
-  0%, 5%    { opacity: 1; }
-  25%, 100% { opacity: 0; }
+  0% { opacity: 1; }
+  20% { opacity: 1; }
+  25% { opacity: 0; }
+  100% { opacity: 0; }
 }
 
 /* === Text on Top of Slideshow === */
@@ -465,7 +445,7 @@ button:hover {
 }
 .kes {
   font-weight: bold;
-  color: red;
+  color: black;
   justify-content: center;
   text-align: center;
 
