@@ -347,7 +347,7 @@ button:hover {
   position: relative;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  overflow: contain;
 }
 
 /* === Slides Wrapper === */
@@ -467,5 +467,5 @@ button:hover {
   color: red;
   justify-content: center;
   text-align: center;
-  
+
 }
