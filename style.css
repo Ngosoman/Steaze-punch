@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -12,33 +13,6 @@ body {
   background: #ffeaea;
 }
 
-/* Navbar Layout */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #ff4d4d;
-  padding: 1rem;
-  position: relative;
-  flex-wrap: wrap;
-}
-
-/* Nav Links */
-.nav-side {
-  display: flex;
-  list-style: none;
-  gap: 1rem;
-}
-
-.nav-side li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.nav-side li a.active {
-  border-bottom: 2px solid #fff;
-}
-
 /* Logo Styling */
 .logo {
   flex-grow: 1;
@@ -47,7 +21,7 @@ body {
 }
 
 .logo img {
-  height: 100px;
+  height: 60px;
   object-fit: contain;
   border-radius: 20px;
 }
@@ -175,11 +149,7 @@ button:hover {
   color: yellow;
   font-weight: bold;
 }
-.nav-links li a.active {
-  border-bottom: 3px solid ;
-  padding-bottom: 0.3rem;
 
-}
 .menu-toggle {
   display: none;
   cursor: pointer;
@@ -191,19 +161,11 @@ button:hover {
   align-items: center;
   justify-content: space-between;
   background-color: #ff4d4d;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   position: relative;
   flex-wrap: wrap;
-}
 
-.logo img {
-  height: 70px;
-  border-radius: 12px;
-}
-
-/* Menu and Hamburger Styling */
-.menu-toggle {
-  display: none;
+  z-index: 999;
 }
 
 .hamburger {
@@ -223,21 +185,11 @@ button:hover {
 }
 
 /* Nav Links */
-.nav-links {
+ .nav-links {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
-}
-
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.5rem 0.8rem;
-  transition: all 0.3s ease;
-  border-radius: 5px;
-}
-
+  gap: 1.8rem;
+} 
 .nav-links li a.active {
   background-color: yellow;
   color: #ff4d4d;
@@ -260,6 +212,9 @@ button:hover {
     background-color: #ff4d4d;
     padding: 1rem;
     z-index: 1000;
+    list-style: none;
+    gap: 1.8rem;
+
   }
 
   .menu-toggle:checked ~ .nav-links {
@@ -270,7 +225,7 @@ button:hover {
     order: -1;
     width: 100%;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.1rem;
   }
 }
 /* Transform hamburger into X when menu is open */
@@ -324,7 +279,12 @@ button:hover {
   height: 100vh;
   overflow: hidden;
 }
-
+/* Hero Slideshow Area */
+ /* .hero-slideshow {
+  height: calc(100vh - 120px); 
+  position: relative;
+  overflow: hidden;
+}  */
 /* === SLIDES WRAPPER === */
 .slideshow-wrapper {
   position: absolute;
@@ -377,22 +337,6 @@ button:hover {
   max-width: 80%;
   margin: 0 auto;
 }
-.
-
-/* TEXT ON TOP */
-.hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-  z-index: 2;
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.4); /* slight dark overlay for clarity */
-  border-radius: 12px;
-}
-
 .hero-content h1 {
   font-size: 3rem;
   margin-bottom: 0.5rem;
@@ -448,5 +392,4 @@ button:hover {
   color: black;
   justify-content: center;
   text-align: center;
-
 }
