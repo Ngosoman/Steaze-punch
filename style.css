@@ -483,10 +483,9 @@ main {
   color: #fff;
   padding: 0 20px;
   background: rgba(0, 0, 0, 0.4);
-  border-radius: 1rem;
-  max-width: 50%;
+  border-radius: 1.8rem;
+  max-width: 75%;
   margin: 0 auto;
-  padding-right: 60px;
   padding-bottom: 19px;
 }
 
