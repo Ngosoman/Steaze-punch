@@ -29,9 +29,11 @@ body.home {
   font-family: 'Graduate', cursive;
 }
 
-/* Keep homepage footer using the initial site font */
-body.home footer {
-  font-family: 'Segoe UI', sans-serif;
+/* Use Arial Black for all footer text */
+footer,
+footer p,
+footer .footer-container {
+  font-family: 'Arial Black', Arial, sans-serif;
 }
 
 /* Make homepage hero fill remaining vertical space to avoid footer gap */
@@ -52,12 +54,15 @@ body.home .hero-slideshow .slide {
   height: 100%;
 }
 
-/* Ensure Graduate font is used for homepage welcome content */
-body.home .hero-content,
-body.home .hero-content h1,
+/* Ensure Graduate is used only for the homepage hero title */
+body.home .hero-content h1 {
+  font-family: 'Graduate', cursive;
+}
+
+/* Use Arial Black for the homepage hero paragraph and buttons */
 body.home .hero-content p,
 body.home .order-btn {
-  font-family: 'Graduate', cursive;
+  font-family: 'Arial Black', Arial, sans-serif;
 }
 
 /* Navbar font for all pages */
