@@ -1,6 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Ballmain&display=swap');
-
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -64,8 +62,10 @@ body.home .order-btn {
 
 /* Navbar font for all pages */
 .navbar,
-.nav-links li a {
-  font-family: 'Ballmain', sans-serif;
+.navbar a,
+.nav-links li a,
+.hamburger {
+  font-family: 'Arial Black', Arial, sans-serif;
 }
 
 /* Hero Section */
