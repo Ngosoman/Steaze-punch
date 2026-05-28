@@ -6,6 +6,55 @@ body {
   color: #333;
 }
 
+/* Layout: make page a column so footer can stick to bottom */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* Homepage font override (Graduate) */
+body.home {
+  font-family: 'Graduate', cursive;
+}
+
+/* Make homepage hero fill remaining vertical space to avoid footer gap */
+body.home main {
+  display: flex;
+  flex-direction: column;
+}
+
+body.home .hero-slideshow {
+  /* let slideshow expand to fill remaining space */
+  flex: 1 1 auto;
+  height: auto; /* override fixed/min heights */
+  min-height: 60vh;
+}
+
+body.home .hero-slideshow .slideshow-wrapper,
+body.home .hero-slideshow .slide {
+  height: 100%;
+}
+
+/* Ensure Graduate font is used for homepage welcome content */
+body.home .hero-content,
+body.home .hero-content h1,
+body.home .hero-content p,
+body.home .order-btn {
+  font-family: 'Graduate', cursive;
+}
+
 /* Hero Section */
 .hero {
   padding: 4rem 2rem;
