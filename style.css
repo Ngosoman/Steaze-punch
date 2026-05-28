@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Ballmain&display=swap');
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -46,8 +48,6 @@ body.home .hero-slideshow {
   height: auto; /* override fixed/min heights */
   min-height: 60vh;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Ballmain&display=swap');
 
 body.home .hero-slideshow .slideshow-wrapper,
 body.home .hero-slideshow .slide {
@@ -242,6 +242,43 @@ form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.product-picker {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.product-picker input {
+  flex: 1;
+}
+
+.selected-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+}
+
+.product-chip {
+  background: #ffe3df;
+  color: #b02a2a;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.remove-product {
+  background: transparent;
+  border: none;
+  color: #b02a2a;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 1;
 }
 
 label {
