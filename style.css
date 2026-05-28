@@ -307,6 +307,11 @@ button {
   transition: background 0.3s ease;
 }
 
+button[type="submit"] {
+  font-family: 'Bahnschrift SemiBold', 'Bahnschrift', Arial, sans-serif;
+  font-weight: 600;
+}
+
 button:hover {
   background-color: #e63946;
 }
