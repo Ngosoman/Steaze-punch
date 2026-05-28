@@ -15,6 +15,16 @@ function renderSelectedProducts() {
     .join('');
 }
 
+function addInitialProductFromQuery() {
+  const params = new URLSearchParams(window.location.search);
+  const initialProduct = params.get('product');
+  if (initialProduct) {
+    addProduct(decodeURIComponent(initialProduct));
+  }
+}
+
+addInitialProductFromQuery();
+
 function addProduct(productName) {
   const value = productName.trim();
   if (!value) return;
