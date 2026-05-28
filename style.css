@@ -47,6 +47,8 @@ body.home .hero-slideshow {
   min-height: 60vh;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Ballmain&display=swap');
+
 body.home .hero-slideshow .slideshow-wrapper,
 body.home .hero-slideshow .slide {
   height: 100%;
@@ -58,6 +60,12 @@ body.home .hero-content h1,
 body.home .hero-content p,
 body.home .order-btn {
   font-family: 'Graduate', cursive;
+}
+
+/* Navbar font for all pages */
+.navbar,
+.nav-links li a {
+  font-family: 'Ballmain', sans-serif;
 }
 
 /* Hero Section */
