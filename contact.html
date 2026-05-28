@@ -49,6 +49,22 @@
       <label for="quantity">Number of Steaze Punch?</label>
       <input type="number" id="quantity" min="1" required />
 
+      <label for="product">Product</label>
+      <input list="product-options" id="product" name="product" placeholder="Choose or type a product" required />
+      <datalist id="product-options">
+        <option value="Mango-Melon 5L"></option>
+        <option value="Pineapple-Mint 5L"></option>
+        <option value="Sweet-Ginger 5L"></option>
+        <option value="Sweet-Ginger 500ml"></option>
+        <option value="Mango-Melon 500ml"></option>
+        <option value="Pineapple-Mint 500ml"></option>
+        <option value="Apple-Punch 500ml"></option>
+        <option value="Sweet-Ginger 300ml"></option>
+        <option value="Mango-Melon 300ml"></option>
+        <option value="Pineapple-Mint 300ml"></option>
+        <option value="Apple-Punch 300ml"></option>
+      </datalist>
+
       <button type="submit">submit</button>
     </form>
   </main>
