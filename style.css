@@ -29,6 +29,11 @@ body.home {
   font-family: 'Graduate', cursive;
 }
 
+/* Keep homepage footer using the initial site font */
+body.home footer {
+  font-family: 'Segoe UI', sans-serif;
+}
+
 /* Make homepage hero fill remaining vertical space to avoid footer gap */
 body.home main {
   display: flex;
@@ -381,6 +386,10 @@ button:hover {
   transition: all 0.3s ease;
   display: inline-block;
   margin-top: 1.5rem;
+}
+
+.hero-content .order-btn + .order-btn {
+  margin-left: 1rem;
 }
 
 .order-btn:hover {
