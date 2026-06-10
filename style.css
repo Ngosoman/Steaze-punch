@@ -245,6 +245,37 @@ body.home .order-btn {
   color: #ff4d4d;
 }
 
+.order-summary {
+  display: grid;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, #fff 0%, #fff7f7 100%);
+  border: 1px solid #ffd0d0;
+  border-radius: 16px;
+  padding: 1rem 1.1rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.order-summary-label {
+  margin: 0;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8b3a3a;
+}
+
+.order-summary-total {
+  margin: 0.15rem 0 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #d92f33;
+}
+
+.order-summary-note {
+  margin: 0;
+  color: #5d5d5d;
+  line-height: 1.45;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -271,12 +302,20 @@ form {
 .product-chip {
   background: #ffe3df;
   color: #b02a2a;
-  padding: 0.45rem 0.8rem;
+  padding: 0.45rem 0.75rem;
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.65rem;
   font-size: 0.95rem;
+}
+
+.product-chip-price {
+  background: rgba(255, 255, 255, 0.75);
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  white-space: nowrap;
 }
 
 .remove-product {
