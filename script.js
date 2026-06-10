@@ -20,6 +20,7 @@ const selectedProductsContainer = document.getElementById('selectedProducts');
 const quantityInput = document.getElementById('quantity');
 const orderTotal = document.getElementById('orderTotal');
 const orderSummaryNote = document.getElementById('orderSummaryNote');
+const orderForm = document.getElementById('orderForm');
 
 function formatCurrency(amount) {
   return `KSH ${amount.toLocaleString('en-KE')}`;
@@ -30,7 +31,7 @@ function getProductPrice(productName) {
 }
 
 function calculateEstimate() {
-  const quantity = Math.max(1, Number.parseInt(quantityInput.value, 10) || 1);
+  const quantity = Math.max(1, Number.parseInt(quantityInput?.value, 10) || 1);
   const pricedProducts = selectedProducts.filter((product) => getProductPrice(product) !== null);
   const unpricedProducts = selectedProducts.filter((product) => getProductPrice(product) === null);
   const unitTotal = pricedProducts.reduce((sum, product) => sum + getProductPrice(product), 0);
@@ -45,6 +46,10 @@ function calculateEstimate() {
 }
 
 function renderOrderSummary() {
+  if (!orderTotal || !orderSummaryNote) {
+    return;
+  }
+
   const { quantity, unitTotal, total, unpricedProducts } = calculateEstimate();
 
   if (!selectedProducts.length) {
@@ -64,88 +69,97 @@ function renderOrderSummary() {
 }
 
 function renderSelectedProducts() {
+  if (!selectedProductsContainer) {
+    return;
+  }
+
   selectedProductsContainer.innerHTML = selectedProducts
     .map((product, index) => `
       <span class="product-chip">
         <span>${product}</span>
         <span class="product-chip-price">${getProductPrice(product) !== null ? formatCurrency(getProductPrice(product)) : 'Price on request'}</span>
         <button type="button" class="remove-product" data-index="${index}">×</button>
-      </span>`
-    )
+      </span>`)
     .join('');
+
   renderOrderSummary();
 }
-
-function addInitialProductFromQuery() {
-  const params = new URLSearchParams(window.location.search);
-  const initialProduct = params.get('product');
-  if (initialProduct) {
-    addProduct(decodeURIComponent(initialProduct));
-  }
-}
-
-addInitialProductFromQuery();
 
 function addProduct(productName) {
   const value = productName.trim();
   if (!value) return;
   if (selectedProducts.includes(value)) return;
   selectedProducts.push(value);
-  productInput.value = '';
+
+  if (productInput) {
+    productInput.value = '';
+  }
+
   renderSelectedProducts();
 }
 
-addProductBtn.addEventListener('click', function () {
-  addProduct(productInput.value);
-});
+if (orderForm && productInput && addProductBtn && selectedProductsContainer && quantityInput && orderTotal && orderSummaryNote) {
+  const params = new URLSearchParams(window.location.search);
+  const initialProduct = params.get('product');
 
-productInput.addEventListener('keydown', function (event) {
-  if (event.key === 'Enter') {
-    event.preventDefault();
-    addProduct(productInput.value);
-  }
-});
-
-selectedProductsContainer.addEventListener('click', function (event) {
-  if (event.target.classList.contains('remove-product')) {
-    const index = Number(event.target.dataset.index);
-    selectedProducts.splice(index, 1);
+  if (initialProduct) {
+    addProduct(decodeURIComponent(initialProduct));
+  } else {
     renderSelectedProducts();
   }
-});
 
-quantityInput.addEventListener('input', renderOrderSummary);
+  addProductBtn.addEventListener('click', function () {
+    addProduct(productInput.value);
+  });
 
-document.getElementById('orderForm').addEventListener('submit', function (e) {
-  e.preventDefault();
+  productInput.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      addProduct(productInput.value);
+    }
+  });
 
-  const name = document.getElementById('name').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-  const location = document.getElementById('location').value.trim();
-  const typedProduct = productInput.value.trim();
+  selectedProductsContainer.addEventListener('click', function (event) {
+    if (event.target.classList.contains('remove-product')) {
+      const index = Number(event.target.dataset.index);
+      selectedProducts.splice(index, 1);
+      renderSelectedProducts();
+    }
+  });
 
-  if (typedProduct) {
-    addProduct(typedProduct);
-  }
+  quantityInput.addEventListener('input', renderOrderSummary);
 
-  if (!selectedProducts.length) {
-    alert('Please add at least one product before submitting your order.');
-    return;
-  }
+  orderForm.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-  const { total, quantity, unpricedProducts } = calculateEstimate();
-  const productsList = selectedProducts.join(', ');
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const location = document.getElementById('location').value.trim();
+    const typedProduct = productInput.value.trim();
 
-  const priceNote = unpricedProducts.length
-    ? `Some items have no price yet: ${unpricedProducts.join(', ')}.`
-    : `Estimated total: ${formatCurrency(total)}.`;
+    if (typedProduct) {
+      addProduct(typedProduct);
+    }
 
-  const message = `Hello Steaze Punch 🍹,\nMy name is ${name} and I’d like to order ${quantity} product(s): ${productsList}.\n${priceNote}\n📍 Delivery Location: ${location}\n📞 Contact: ${phone}`;
+    if (!selectedProducts.length) {
+      alert('Please add at least one product before submitting your order.');
+      return;
+    }
 
-  const whatsappNumber = '254706867627';
-  const url = `https://wa.me/${whatsappNumber}?${new URLSearchParams({ text: message }).toString()}`;
+    const { total, quantity, unpricedProducts } = calculateEstimate();
+    const productsList = selectedProducts.join(', ');
 
-  window.open(url, '_blank');
-});
+    const priceNote = unpricedProducts.length
+      ? `Some items have no price yet: ${unpricedProducts.join(', ')}.`
+      : `Estimated total: ${formatCurrency(total)}.`;
 
-renderSelectedProducts();
+    const message = `Hello Steaze Punch 🍹,\nMy name is ${name} and I’d like to order ${quantity} product(s): ${productsList}.\n${priceNote}\n📍 Delivery Location: ${location}\n📞 Contact: ${phone}`;
+
+    const whatsappNumber = '254706867627';
+    const url = `https://wa.me/${whatsappNumber}?${new URLSearchParams({ text: message }).toString()}`;
+
+    window.open(url, '_blank');
+  });
+
+  renderOrderSummary();
+}
