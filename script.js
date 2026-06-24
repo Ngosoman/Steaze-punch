@@ -98,7 +98,7 @@ function addProduct(productName) {
   renderSelectedProducts();
 }
 
-if (orderForm && productInput && addProductBtn && selectedProductsContainer && quantityInput && orderTotal && orderSummaryNote) {
+if (orderForm && productInput && addProductBtn && selectedProductsContainer && orderTotal && orderSummaryNote) {
   const params = new URLSearchParams(window.location.search);
   const initialProduct = params.get('product');
 
@@ -127,7 +127,9 @@ if (orderForm && productInput && addProductBtn && selectedProductsContainer && q
     }
   });
 
-  quantityInput.addEventListener('input', renderOrderSummary);
+  if (quantityInput) {
+    quantityInput.addEventListener('input', renderOrderSummary);
+  }
 
   orderForm.addEventListener('submit', function (e) {
     e.preventDefault();
