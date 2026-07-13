@@ -692,8 +692,32 @@ main {
   }
 
   .slide {
-    background-size: contain;
+    left: 33.333%;
+    width: 33.334%;
+    background-size: cover;
     background-position: center center;
+  }
+
+  .slide::before,
+  .slide::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: calc(100% + 1px);
+    background-image: inherit;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+  }
+
+  .slide::before {
+    right: 100%;
+  }
+
+  .slide::after {
+    left: 100%;
   }
 
   .hero-content {
