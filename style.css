@@ -685,6 +685,17 @@ main {
   animation: slideshow 25s infinite;
 }
 
+@media (min-width: 769px) {
+  .hero-slideshow {
+    background-color: #111;
+  }
+
+  .slide {
+    background-size: contain;
+    background-position: center center;
+  }
+}
+
 @media (min-width: 1024px) {
   .hero-slideshow {
     height: min(72vh, 680px);
