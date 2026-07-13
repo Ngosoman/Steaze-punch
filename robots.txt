@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://steazepunch.co.ke/sitemap.xml
