@@ -8,10 +8,10 @@ const PRODUCT_PRICES = new Map([
   ['Mango-Melon 500ml', 240],
   ['Pineapple-Mint 500ml', 240],
   ['Apple-Punch 500ml', 240],
-  ['Sweet-Ginger 300ml', 130],
-  ['Mango-Melon 300ml', 130],
-  ['Pineapple-Mint 300ml', 130],
-  ['Apple-Punch 300ml', 130],
+  ['Sweet-Ginger 250ml', 130],
+  ['Mango-Melon 250ml', 130],
+  ['Pineapple-Mint 250ml', 130],
+  ['Apple-Punch 250ml', 130],
 ]);
 
 const productInput = document.getElementById('product');
@@ -155,7 +155,9 @@ if (orderForm && productInput && addProductBtn && selectedProductsContainer && o
       ? `Some items have no price yet: ${unpricedProducts.join(', ')}.`
       : `Estimated total: ${formatCurrency(total)}.`;
 
-    const message = `Hello Steaze Punch 🍹,\nMy name is ${name} and I’d like to order ${quantity} product(s): ${productsList}.\n${priceNote}\n📍 Delivery Location: ${location}\n📞 Contact: ${phone}`;
+    const orderId = 'SPZ-' + Date.now().toString(36).toUpperCase().slice(-5) + Math.random().toString(36).toUpperCase().slice(2, 5);
+
+    const message = `Hello Steaze Punch 🍹,\n🆔 Order ID: ${orderId}\nMy name is ${name} and I'd like to order ${quantity} product(s): ${productsList}.\n${priceNote}\n📍 Delivery Location: ${location}\n📞 Contact: ${phone}`;
 
     const whatsappNumber = '254706867627';
     const url = `https://wa.me/${whatsappNumber}?${new URLSearchParams({ text: message }).toString()}`;
