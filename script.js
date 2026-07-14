@@ -155,7 +155,27 @@ if (orderForm && productInput && addProductBtn && selectedProductsContainer && o
       ? `Some items have no price yet: ${unpricedProducts.join(', ')}.`
       : `Estimated total: ${formatCurrency(total)}.`;
 
-    const orderId = 'SPZ-' + Date.now().toString(36).toUpperCase().slice(-5) + Math.random().toString(36).toUpperCase().slice(2, 5);
+    const FLAVOUR_CODES = {
+      'sweet-ginger': 'SG',
+      'mango-melon': 'MM',
+      'pineapple-mint': 'PM',
+      'apple-punch': 'AP',
+      'steazy lemonade': 'SL',
+    };
+
+    function getFlavourCode(products) {
+      if (products.length !== 1) return 'MX';
+      const key = products[0].toLowerCase().replace(/\s*\d+.*$/, '').trim();
+      return FLAVOUR_CODES[key] || 'MX';
+    }
+
+    const now = new Date();
+    const dd = String(now.getDate()).padStart(2, '0');
+    const mm = String(now.getMonth() + 1).padStart(2, '0');
+    const yy = String(now.getFullYear()).slice(-2);
+    const nn = String(Math.floor(Math.random() * 99) + 1).padStart(2, '0');
+    const flavourCode = getFlavourCode(selectedProducts);
+    const orderId = `SP-${flavourCode}-${dd}${mm}${yy}-${nn}`;
 
     const message = `Hello Steaze Punch 🍹,\n🆔 Order ID: ${orderId}\nMy name is ${name} and I'd like to order ${quantity} product(s): ${productsList}.\n${priceNote}\n📍 Delivery Location: ${location}\n📞 Contact: ${phone}`;
 
